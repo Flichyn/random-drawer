@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drawn index{% endblock %}
+
+{% block body %}
+    <h1>Drawn index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Crew_id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for drawn in drawns %}
+            <tr>
+                <td>{{ drawn.id }}</td>
+                <td>{{ drawn.name }}</td>
+                <td>{{ drawn.crewId }}</td>
+                <td>
+                    <a href="{{ path('drawn_show', {'id': drawn.id}) }}">show</a>
+                    <a href="{{ path('drawn_edit', {'id': drawn.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('drawn_new') }}">Create new</a>
+{% endblock %}

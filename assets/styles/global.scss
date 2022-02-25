@@ -1,0 +1,242 @@
+* {
+  margin: 0
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $text-font;
+}
+
+header {
+  background-color: $primary;
+  height: $navbar-height;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > div > a > img {
+    width: 150px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+main {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-family: $title-font;
+  color: $secondary-dark;
+  margin: $spacing6;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $title-font;
+  color: $primary-dark;
+  margin: $spacing6 0 $spacing3 0;
+}
+
+a:visited {
+  color: $light;
+}
+
+.drawn {
+  font-size: 36px;
+  color: $secondary-dark;
+}
+
+.drawn-message {
+  color: $danger;
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+}
+
+/** Button tag and class button have the same rules */
+button, .button {
+  text-decoration: none;
+  text-align: center;
+  padding: $spacing $spacing2;
+  background-color: $secondary;
+  color: $light;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  transition: background-color 0.2s;
+  box-shadow: 3px 3px 0 0 rgba(0,0,0,0.2);
+  margin: $spacing2 0;
+  cursor: pointer;
+
+  & > svg {
+    align-self: center;
+    vertical-align: middle;
+  }
+
+  &:active {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    background-color: $secondary-dark;
+    box-shadow: 1px 1px 0 0 rgba(0,0,0,0.3);
+  }
+
+  &:hover {
+    background-color: $secondary-light;
+    color: $light;
+  }
+}
+
+/** Class button hover and active to display links the same as buttons */
+.delete-button {
+  background-color: $danger;
+
+  &:hover {
+    background-color: #f3555a;
+  }
+
+  &:active {
+    background-color: #c0090e;
+  }
+}
+/** Button section ends */
+
+.delete-form {
+  text-align: center;
+}
+
+/** Flash messages */
+
+.alert {
+  position: relative;
+  padding: $spacing2;
+  margin-bottom: $spacing $spacing3;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert:hover {
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.alert-success {
+  background-color: #d1e7dd;
+  border: 1px solid #a9e0c8;
+  color: #0f5132;
+
+  &:hover {
+    background-color: #e1faef;
+  }
+}
+
+
+.alert-danger {
+  background-color: #eab6bb;
+  border: 1px solid #dc9cac;
+  color: #a92633;
+
+  &:hover {
+    background-color: #ffdddf;
+  }
+}
+
+.alert-info {
+  background-color: #b6e4ea;
+  border: 1px solid #9cd5dc;
+  color: #366b75;
+
+  &:hover {
+    background-color: #dcf5fc;
+  }
+}
+
+/** Flash messages ends */
+
+table {
+  border-collapse: collapse;
+  border: 1px solid $grey;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+td {
+  padding: $spacing;
+  border-left: 1px solid $grey;
+  border-top: 1px solid $grey;
+  //border-radius: $spacing;
+}
+
+th {
+  padding: $spacing;
+  border-left: 1px solid $grey;
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+tr:last-child > td:first-child {
+  border-left: none;
+}
+
+.actions-button {
+  display: flex;
+
+  & > a {
+    max-height: $spacing3;
+    margin: 0 $spacing 0 0;
+  }
+
+  & > form {
+    max-height: $spacing3;
+
+    & > button {
+      margin: 0;
+      max-height: 40px;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $navbar-height;
+  background-color: $primary-light;
+  margin-top: $spacing4;
+  text-align: center;
+}
+
+@media screen and (max-width: 300px) {
+  table {
+    width: 90%;
+  }
+
+  .actions-button {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+
+    & > a, form {
+      margin: 0;
+    }
+
+    & > a {
+      margin-bottom: $spacing;
+    }
+  }
+}

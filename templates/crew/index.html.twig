@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crew index{% endblock %}
+
+{% block body %}
+    <h1>Crew index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for crew in crews %}
+            <tr>
+                <td>{{ crew.id }}</td>
+                <td>{{ crew.name }}</td>
+                <td>
+                    <a href="{{ path('crew_show', {'id': crew.id}) }}">show</a>
+                    <a href="{{ path('crew_edit', {'id': crew.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('crew_new') }}">Create new</a>
+{% endblock %}

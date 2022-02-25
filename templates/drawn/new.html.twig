@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Drawn{% endblock %}
+
+{% block body %}
+    <h1>Create new Drawn</h1>
+
+    {{ include('drawn/_form.html.twig') }}
+
+    <a href="{{ path('drawn_index') }}">back to list</a>
+{% endblock %}

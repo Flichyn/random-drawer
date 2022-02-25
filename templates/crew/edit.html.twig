@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Éditer un membre{% endblock %}
+
+{% block body %}
+    <h1>Éditer un membre</h1>
+
+    {{ include('crew/_form.html.twig', {'button_label': 'Éditer'}) }}
+
+    <a class="button" href="{{ path('home') }}">Retour</a>
+{% endblock %}
