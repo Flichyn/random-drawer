@@ -47,6 +47,7 @@ class CrewController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+            $this->addFlash('success', $crew->getName() . ' has been updated.');
 
             return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
         }
